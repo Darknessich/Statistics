@@ -1,0 +1,40 @@
+\documentclass[14pt]{extarticle}
+\usepackage{graphicx} 
+\usepackage{float} 
+\usepackage{color}
+\usepackage[a4paper, total={6in, 8in},left=2cm,right=2cm,
+top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[colorlinks = true, allcolors = cyan]{hyperref}
+\usepackage{xfrac}
+\usepackage{indentfirst}
+\graphicspath{ {./images/} }
+\newenvironment{comment}{}{}
+
+\newcommand{\RomanNumeralCaps}[1]
+    {\MakeUppercase{\romannumeral #1}}
+
+\DeclareMathOperator{\med}{med} %Медиана
+\DeclareMathOperator{\pirs}{r} %Коэффициент корреляции Пирсона
+\DeclareMathOperator{\sign}{sign} %Сигнум-функция
+
+\begin{document}
+
+\input{titlepage}
+
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\input{problem_statement}
+\input{theory}
+\input{work_description}
+\input{results}
+\input{discussion}
+
+
+\end{document}

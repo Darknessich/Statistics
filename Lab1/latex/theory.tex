@@ -1,0 +1,212 @@
+\section{Теория}
+\subsection{Функции распределения}
+\begin{itemize}
+    \item Нормальное распределение 
+    \begin{equation}
+        N(x, 0, 1) = \frac{1}{\sqrt{2\pi}}e^\frac{-x^2}{2}
+        \label{eq1}
+    \end{equation}
+    
+    \item Распределение Коши 
+    \begin{equation}
+       C(x, 0, 1) = \frac{1}{\pi}\frac{1}{x^2+1}
+       \label{eq2}
+    \end{equation}
+    
+    \item Распределение Стьюдента $t(x, 0, 3)$ с тремя степенями свободы
+     \begin{equation}
+       t(x, 0, 3) = \frac{6\sqrt3}{\pi(3 + t^2)^2}
+       \label{eq3}
+    \end{equation}
+    
+    \item Распределение Пуассона 
+     \begin{equation}
+       P(k, 10) = \frac{10^k}{k!}e^{-10}
+       \label{eq4}
+    \end{equation}
+    
+    \item Равномерное распределение 
+     \begin{equation}
+       U(x, -\sqrt3, \sqrt3) = \begin{cases}
+       \frac{1}{2\sqrt3} & \mbox{при} \; |x| \leq \sqrt3\\
+       0 & \mbox{при} \; |x| > \sqrt3
+       \end{cases}
+       \label{eq5}
+    \end{equation}
+    
+\end{itemize}
+
+\subsection{Характеристики положения}
+
+\begin{itemize}
+    \item Выборочное среднее
+    \begin{equation}
+        \overline{x} = \tfrac{1}{n}\sum_{i = 1}^{n}x_i
+        \label{eq6}
+    \end{equation}
+    \item Выборочная медиана
+    
+       \begin{equation}
+med\ x = \left\{
+\begin{array}{ccl}
+x_{(l + 1)} & \text{при} & n = 2l + 1\\
+\dfrac{x_{(l)} + x_{(l + 1)}}{2} & \text{при} & n = 2l
+\end{array}
+\right.
+\label{eq7}
+\end{equation}
+    
+    \item Полусумма экстремальных выборочных элементов
+    \begin{equation}
+        z_{R} = \frac{x_{(1)} + x_{(n)}}{2}
+        \label{eq8}
+    \end{equation}
+    \item Полусумма квартилей\\
+    Выборочная квартиль $z_{p}$ порядка $p$ определяется формулой
+    \begin{equation}
+        z_{p} = \left\{
+\begin{array}{ccl}
+x_{([np]+ 1)} & \text{при} & np\ \text{дробном}\\
+x_{(np)} & \text{при} & np\ \text{целом}
+\end{array}
+\right.
+\label{eq9}
+    \end{equation}
+    Полусумма квартилей\\
+    \begin{equation}
+        z_{Q} = \dfrac{z_{1/4} + z_{3/4}}{2}
+        \label{eq10}
+    \end{equation}
+    \item Усечённое среднее
+    
+    \begin{equation}
+        z_{tr} = \tfrac{1}{n - 2r}\sum_{i = r + 1}^{n - r}x_{(i)},\ r\approx\dfrac{n}{4}
+        \label{eq11}
+    \end{equation}
+    \item Оценка дисперсии
+    \begin{equation}
+        D(z) = \overline{z^2} - \overline{z}^2
+        \label{eq12}
+    \end{equation}
+\end{itemize}
+
+\subsection{Бокс-плот Тьюки}
+Боксплот (англ. box plot) — график, использующийся в описательной статистике, компактно изображающий одномерное распределение вероятностей.
+Такой вид диаграммы в удобной форме показывает медиану, нижний и верхний квартили и выбросы. Границами ящика служат первый и третий квартили, линия в середине ящика — медиана. Концы усов — края статистически
+значимой выборки (без выбросов). Длину «усов» определяют разность первого квартиля и полутора межквартильных расстояний и сумма третьего
+квартиля и полутора межквартильных расстояний. Формула имеет вид
+
+\begin{equation}
+    X_{1} = Q_{1} - \dfrac{3}{2}(Q_{3} -Q_{1}),\;\; X_{2} = Q_{3} + \dfrac{3}{2}(Q_{3} -Q_{1})
+    \label{eq13}
+\end{equation}
+
+\noindentгде $X_{1}$ — нижняя граница уса, $X_{2}$ — верхняя граница уса, $Q_{1}$ — первый
+квартиль, $Q_{3}$ — третий квартиль. Данные, выходящие за границы усов (выбросы), отображаются на графике в виде маленьких кружков.\\
+Выбросами считаются величины $x$, такие что
+
+
+\begin{equation}
+    \left[
+  \begin{array}{ccc}
+        x < X_{1}^{T}\\
+        x > X_{2}^{T}
+  \end{array}
+\right.
+\label{eq14}
+\end{equation}
+
+\subsection{ Доверительные интервалы для параметров нормального распределения}
+
+\subsubsection{Доверительный интервал для среднего значения m нормального распределения}
+
+Дана выборка $(x_1, x_2, ... x_n)$ объёма $n$ из нормальной генеральной совокупности. На её основе строим выборочное среднее $\overline{x}$ и выборочное среднее квадратическоеп отклонение $s$. Параметры $m$ и $\sigma$ нормального распределения неизвестны.\\
+Доказано, что случайная величина:
+\begin{equation}
+    T = \sqrt{n - 1}\cdot \dfrac{\overline{x} - m}{s}
+    \label{eq15}
+\end{equation}
+
+\noindent называемая статистикой Стьюдента, распределена по закону Стьюдента с $n-1$ степенями свободы. Пусть $f_{T}(x)$ - плотность вероятности этого распределения. Тогда 
+
+\begin{multline*}
+    P(-x < \sqrt{n - 1}\cdot \dfrac{\overline{x} - m}{s} < x) = P(-x < \sqrt{n - 1}\cdot \dfrac{m - \overline{x}}{s} < x) = \\ =\int \limits_{-x}^{x}f_{T}(t)dt = 2\int \limits_{0}^{x}f_{T}(t)dt = 2\Bigg(\int \limits_{-\infty}^{x}f_{T}(t)dt - \dfrac{1}{2}\Bigg) = 2F_{T}(x) - 1
+\end{multline*}
+
+\noindent Здесь  $F_{T}(x)$ - функция распределения Стьюдента с $n-1$ степенями свободы.\\
+Полагаем $2F_{T}(x) - 1 = 1 - \alpha$, где $\alpha$ - выбранный уровень значимости. Тогда $F_{T}(x) = 1 - \sfrac{\alpha}{2}$. Пусть $t_{1 - \sfrac{\alpha}{2}}(n-1)$ - квантиль распределения Стьюдента с $n-1$ степенями свободы и порядка $1 - \sfrac{\alpha}{2}$. Из предыдущих равенств получаем
+
+\begin{multline}
+    P(\overline{x} - \dfrac{sx}{\sqrt{n - 1}} < m < \overline{x} + \dfrac{sx}{\sqrt{n - 1}}) = 2F_{T}(x) - 1 = 1 - \alpha, \\
+    P(\overline{x} - \dfrac{st_{1 - \sfrac{\alpha}{2}}(n-1)}{\sqrt{n - 1}} < m < \overline{x} + \dfrac{st_{1 - \sfrac{\alpha}{2}}(n-1)}{\sqrt{n - 1}}) = 1 - \alpha
+    \label{eq16}
+\end{multline}
+
+ \noindent что и даёт доверительный интервал для $m$ с доверительной верятностью $\gamma = 1 - \alpha$. 
+        
+
+
+
+
+
+
+\subsubsection{Доверительный интервал для среднего квалратического отклонения нормального распределения}
+
+Дана выборка $(x_1, x_2, ... x_n)$ объёма $n$ из нормальной генеральной совокупности. На её основе строим выборочную дисперсию $s^2$.Параметры $m$ и $\sigma$ нормального распределения неизвестны.\\
+Доказано, что случайная величина $\sfrac{ns^2}{\sigma^2}$ распределена по закону $\chi^2$ с $n-1$ степенями свободы.\\
+Задаёмся уровнем значимости $\alpha$ и по таблице находим квантили $\chi_{\sfrac{\alpha}{2}}^{2}(n-1)$ и $\chi_{1 - \sfrac{\alpha}{2}}^{2}(n-1)$. Это значит, что\\
+\begin{center}
+    $P(\chi^{2}(n - 1) < \chi_{\sfrac{\alpha}{2}}^{2}(n-1)) = \sfrac{\alpha}{2}\;\;\;\;
+    P(\chi^{2}(n - 1) < \chi_{1 - \sfrac{\alpha}{2}}^{2}(n-1)) = 1 - \sfrac{\alpha}{2}$
+\end{center}
+\noindent Откуда можно получить, что 
+\begin{equation}
+    P\Bigg(\dfrac{s\sqrt{n}}{\sqrt{\chi_{1 - \sfrac{\alpha}{2}}^{2}(n-1)}} < \sigma < \dfrac{s\sqrt{n}}{\sqrt{\chi_{\sfrac{\alpha}{2}}^{2}(n-1)}}\Bigg) = 1 - \alpha
+    \label{eq17}
+\end{equation}
+
+\noindent что и даёт доверительный интервал для $\sigma$ с с доверительной верятностью $\gamma = 1 - \alpha$. 
+
+
+
+\subsubsection{Доверительный интервал для среднего значения m произвольной генеральной совокупности при большом объёме выборки}
+
+Пусть 
+\begin{equation*}
+    \Phi(x) = \dfrac{1}{\sqrt{2\pi}} \int \limits_{-\infty}
+ ^{x}e^{\sfrac{-t^2}{2}}dt
+ \end{equation*}
+\noindent - функция Лапласа. тогда
+$$P\Bigg(-x < \sqrt{n}\cdot \dfrac{\overline{x} - m}{\sigma} < x\Bigg) \approx 2\Phi(x) - 1$$
+\noindent Откуда 
+$$P\Bigg(\overline{x} - \dfrac{\sigma x}{\sqrt{n}} < m < \overline{x} + \dfrac{\sigma x}{\sqrt{n}}\Bigg) \approx 2\Phi(x) - 1$$
+
+\noindent Положим $2\Phi(x) - 1 = \gamma = 1 -\alpha$. Пусть $u_{1 - \sfrac{\alpha}{2}}$ - квантиль нормального распределения $N(0, 1)$ порядка $1 - \sfrac{\alpha}{2}$. Получим
+
+\begin{equation}
+    P\Bigg(\overline{x} - \dfrac{su_{1 - \sfrac{\alpha}{2}}}{\sqrt{n}} < m < \overline{x} + \dfrac{su_{1 - \sfrac{\alpha}{2}}}{\sqrt{n}}\Bigg) \approx \gamma
+    \label{eq18}
+\end{equation}
+
+\noindent что и даёт доверительный интервал для $m$ с с доверительной верятностью $\gamma = 1 - \alpha$. 
+
+
+\subsubsection{Доверительный интервал для среднего квадратического отклонения произвольной генеральной совокупности при большом объёме выборки}
+
+Пусть 
+\begin{equation*}
+    \Phi(x) = \dfrac{1}{\sqrt{2\pi}} \int \limits_{-\infty}
+ ^{x}e^{\sfrac{-t^2}{2}}dt
+ \end{equation*}
+\noindent - функция Лапласа. Тогда 
+$$P\Bigg(-x < \dfrac{s^2 - Ms^2}{\sqrt{Ds^2}} < x\Bigg) \approx 2\Phi(x) - 1$$
+
+\noindent Положим $2\Phi(x) - 1 = \gamma = 1 -\alpha$. Пусть $u_{1 - \sfrac{\alpha}{2}}$ - квантиль нормального распределения $N(0, 1)$ порядка $1 - \sfrac{\alpha}{2}$. Получим
+
+$$\sqrt{Ds^2} \approx \dfrac{\sigma^2}{\sqrt{n}}\sqrt{e + 2} $$
+
+\begin{equation}
+    s(1 + u_{1 - \sfrac{\alpha}{2}}\sqrt{\sfrac{(e+2)}{n}})^{\sfrac{-1}{2}} < \sigma < s(1 - u_{1 - \sfrac{\alpha}{2}}\sqrt{\sfrac{(e+2)}{n}})^{\sfrac{-1}{2}}
+    \label{eq19}
+\end{equation}
+\noindent что и даёт доверительный интервал для $\sigma$ с с доверительной верятностью $\gamma = 1 - \alpha$. 
